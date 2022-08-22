@@ -1,9 +1,6 @@
 package com.Slashdot.TakeHomeTest;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -58,7 +55,6 @@ public class SlashdotTest {
 		for (WebElement elements : uniqueIcons) {
 			System.out.println("Icon present: " + elements.getAttribute("title"));
 
-//			System.out.println(Collections.frequency(uniqueIcons, elements));
 		}
 
 		// 4. Vote for some random option on the daily poll
@@ -87,7 +83,7 @@ public class SlashdotTest {
 		 */
 		String votePollingPage = wd.getTitle();
 		System.out.println("current page title: " + votePollingPage);
-		sf.assertEquals(votePollingPage, "Slashdot Poll | What is your favorite BSD operating ...");
+		sf.assertEquals(votePollingPage, "Slashdot Poll | Is the Linux desktop user experience: ...");
 
 		System.out.println("total votes on poll: " + totalVotesOnPoll.getText());
 		sf.assertAll();
